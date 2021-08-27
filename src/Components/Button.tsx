@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { lightTheme } from '../theme';
 
 const Button = styled.button(({ theme }) => {
   const { breakpoints, colors, sizes, typography } = theme;
@@ -24,5 +25,9 @@ const Button = styled.button(({ theme }) => {
     }
   `;
 });
+
+Button.defaultProps = {
+  theme: lightTheme,
+};
 
 export default Button;

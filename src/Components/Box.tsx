@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { lightTheme } from '../theme';
 
 const Box = styled.div(({ theme }) => {
   const { breakpoints, colors, sizes } = theme;
@@ -20,5 +21,9 @@ const Box = styled.div(({ theme }) => {
     }
   `;
 });
+
+Box.defaultProps = {
+  theme: lightTheme,
+};
 
 export default Box;

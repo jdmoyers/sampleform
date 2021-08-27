@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { InputHTMLAttributes } from 'react';
+import { lightTheme } from '../theme';
 
 export interface IInputText extends InputHTMLAttributes<HTMLInputElement> {
   type: 'text' | 'email' | 'password' | 'number';
@@ -20,5 +21,9 @@ const InputText = styled.input<IInputText>(({ theme }) => {
     }
   `;
 });
+
+InputText.defaultProps = {
+  theme: lightTheme,
+};
 
 export default InputText;

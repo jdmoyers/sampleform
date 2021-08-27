@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { lightTheme } from '../theme';
 
 const ErrorMessage = styled.div(({ theme }) => {
   const { breakpoints, colors, sizes, typography } = theme;
@@ -18,5 +19,9 @@ const ErrorMessage = styled.div(({ theme }) => {
     }
   `;
 });
+
+ErrorMessage.defaultProps = {
+  theme: lightTheme,
+};
 
 export default ErrorMessage;

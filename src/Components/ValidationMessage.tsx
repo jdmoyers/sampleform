@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { lightTheme } from '../theme';
 
 const ValidationMessage = styled.div(({ theme }) => {
   const { breakpoints, colors, typography } = theme;
@@ -14,5 +15,9 @@ const ValidationMessage = styled.div(({ theme }) => {
     }
   `;
 });
+
+ValidationMessage.defaultProps = {
+  theme: lightTheme,
+};
 
 export default ValidationMessage;

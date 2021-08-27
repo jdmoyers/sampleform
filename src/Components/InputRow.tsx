@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { lightTheme } from '../theme';
 
 const InputRow = styled.div(({ theme }) => {
   const { breakpoints, sizes } = theme;
@@ -14,5 +15,9 @@ const InputRow = styled.div(({ theme }) => {
     }
   `;
 });
+
+InputRow.defaultProps = {
+  theme: lightTheme,
+};
 
 export default InputRow;

@@ -1,6 +1,8 @@
 import { Meta, Story } from '@storybook/react';
+import { ThemeProvider } from '@emotion/react';
+import { lightTheme } from '../theme';
 
-import Button from './TestButton';
+import Button from './Button';
 
 export default {
   component: Button,
@@ -24,6 +26,13 @@ const Template: Story = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  label: 'Button',
   children: 'Test Button',
 };
+
+Primary.decorators = [
+  (Story) => (
+    <ThemeProvider theme={lightTheme}>
+      <Story />
+    </ThemeProvider>
+  ),
+];

@@ -3,6 +3,7 @@ import InputRow from './InputRow';
 import InputText from './InputText';
 import Label from './Label';
 import ValidationMessage from './ValidationMessage';
+import { lightTheme } from '../theme';
 
 interface FormInput {
   name: string;
