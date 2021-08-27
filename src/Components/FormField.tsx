@@ -24,14 +24,14 @@ const FormField: FC<{ fieldData: FormInput }> = ({ fieldData }) => {
         type={`${fieldData.type}`}
         name={`${fieldData.name}`}
         id={`${fieldData.name}`}
-        aria-describedby={fieldData.valid ? `${fieldData.name}Validation` : undefined}
+        aria-describedby={!fieldData.valid ? `${fieldData.name}Validation` : undefined}
         value={fieldData.value}
         required={fieldData.required}
         onChange={fieldData.changeHandler}
       />
 
       <ValidationMessage id={`${fieldData.name}Validation`}>
-        {fieldData.valid && fieldData.errorMessage}
+        {!fieldData.valid && fieldData.errorMessage}
       </ValidationMessage>
     </InputRow>
   );

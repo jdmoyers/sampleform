@@ -21,7 +21,7 @@ const Register: FC = () => {
 
     const { name, value, type } = event.target;
 
-    if (!validateField(type, value)) {
+    if (validateField(type, value)) {
       setFormState({ ...formState, [name]: { value, valid: true } });
     } else {
       setFormState({ ...formState, [name]: { value, valid: false } });
