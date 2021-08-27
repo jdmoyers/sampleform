@@ -11,7 +11,7 @@ const Button = styled.button(({ theme }) => {
     cursor: pointer;
     font-size: ${typography.size.sm};
     font-weight: ${typography.weight.regular};
-    padding: ${sizes.space.xs} ${sizes.space.md};
+    padding: ${sizes.space.xs} ${sizes.space.lg};
     text-transform: uppercase;
     transition: background-color ease-in-out 100ms;
 
