@@ -2,6 +2,7 @@ import { FC, FormEvent, ChangeEvent, useState } from 'react';
 import Box from '../Components/Box';
 import Button from '../Components/Button';
 import ButtonRow from '../Components/ButtonRow';
+import ErrorMessage from '../Components/ErrorMessage';
 import FormField from '../Components/FormField';
 import { validateField } from '../Utils/validateField';
 
@@ -12,13 +13,12 @@ const Register: FC = () => {
     email: { value: '', valid: true },
     username: { value: '', valid: true },
     password: { value: '', valid: true },
+    invalid: false,
   };
 
   const [formState, setFormState] = useState(initialState);
 
   const changeHandler = (event: ChangeEvent<HTMLInputElement>): void => {
-    console.log('event', event);
-
     const { name, value, type } = event.target;
 
     if (validateField(type, value)) {
@@ -30,7 +30,15 @@ const Register: FC = () => {
 
   const submitHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (formState.firstName.value) console.log('formState', formState);
+    const { firstName, lastName, email, username, password } = formState;
+
+    if (firstName.valid && lastName.valid && email.valid && username.valid && password.valid) {
+      setFormState({ ...formState, invalid: false });
+      alert('Form valid, submitting');
+      console.log('formData', formState);
+    } else {
+      setFormState({ ...formState, invalid: true });
+    }
   };
 
   return (
@@ -102,6 +110,10 @@ const Register: FC = () => {
             changeHandler,
           }}
         />
+
+        {formState.invalid && (
+          <ErrorMessage aria-live="assertive">Please correct any errors then try again.</ErrorMessage>
+        )}
 
         <ButtonRow>
           <Button type="submit">Register</Button>
