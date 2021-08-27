@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { ThemeProvider } from '@emotion/react';
-
 import { lightTheme } from './theme';
 import GlobalStyles from './GlobalStyles';
 import Register from './Pages/Register';

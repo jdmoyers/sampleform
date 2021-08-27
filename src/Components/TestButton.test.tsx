@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Primary } from './Button.stories';
+import { Primary } from './TestButton.stories';
 
 test('renders button component', () => {
   render(<Primary>Test Button</Primary>);
